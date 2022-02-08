@@ -1,16 +1,16 @@
 <template>
-  <div id="invoice-POS">
-    <p class="textcenter maintilte">فاتورة ضريبية مبسطة</p>
+   <div id="invoice-POS">
+    <p class="textcenter maintilte">إشعار دائن للفاتورة الضريبية المبسطة</p>
     <center id="top" class="paddingX">
       <div class="info">
-        <h2 class="infoh2 pr15">اسم المتجر</h2>
-        <p class="infoPara pr15">رﻮــــﺴـــﻛ</p>
+        <h2 class="infoh2 pl14">اسم المتجر</h2>
+        <p class="infoPara pl14">رﻮــــﺴـــﻛ</p>
       </div>
       <div class="logo">
         <img src="../assets/logo.png" alt="" />
       </div>
       <div class="info textRight">
-        <h2 class="infoh2 pl14"># رقم الفاتورة</h2>
+        <h2 class="infoh2 pl14"># رقم المرتجع</h2>
         <p class="infoPara pl14" id="i5"></p>
       </div>
       <!--End Info-->
@@ -23,7 +23,7 @@
           <p class="infoh2mid mb5">
             <span id="i10">001324956223333</span> : الرقم الضريبي
           </p>
-          <p class="infoh2mid mb5">الفرع :<span id="i14"></span></p>
+          <p class="infoh2mid mb5">الفرع :<span id="i144"></span></p>
           <p class="infoh2mid mb5">المدينة :<span id="i18"></span></p>
           <p class="infoh2mid mb5">الحي: <span id="i22"></span></p>
           <p class="infoh2mid mb5">
@@ -37,6 +37,7 @@
           </p>
         </div>
         <div class="textRight wid50">
+          <p class="infoh2mid mb5">#<span id="i60"></span> : رقم الفاتورة</p>
           <p class="infoh2mid mb5"><span id="i8"></span> : تاريخ الإصدار</p>
           <p class="infoh2mid mb10"><span id="i12"></span> : وقت الإصدار</p>
           <p class="infoh2mid mb10">
@@ -45,13 +46,25 @@
           <p class="infoh2mid mb10">
             : الرقم الضريبي للعميل
 
+            <br />
             <span>001324956223333</span> <span id="i20"></span>
           </p>
           <p class="infoh2mid mb10">
             عنوان العميل : <span id="i26"></span> محمد عبدالله
           </p>
 
-          <p class="infoh2mid mb10 notes"><span id="i29"> </span></p>
+          <p class="infoh2mid mb10 notes">
+            <span id="i29"> </span> هو ببساطة نص شكلي يستخدم في صناعة الطباعة
+            والتنضيد. كان Lorem Ipsum هو النص الوهمي القياسي في الصناعة منذ
+            القرن الخامس عشر الميلادي ، عندما أخذت طابعة غير معروفة لوحًا من
+            النوع وتدافعت عليه لعمل كتاب عينة. لقد صمد ليس فقط لخمسة قرون ، ولكن
+            أيضًا القفزة في التنضيد الإلكتروني ، وظل دو في التنضيد الإلكتروني ،
+            وظل دو في التنضيد الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دو
+            في التنضيد الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دو في
+            التنضيد الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دو في
+            التنضيد الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دون تغيير
+            جوهري. كان
+          </p>
         </div>
       </div>
     </div>
@@ -101,7 +114,7 @@
 
           <tr class="service textcenter">
             <td class="tableitem">
-              <p class="itemtext fontroboto" id="">402.50</p>
+              <p class="itemtext fontroboto">402.50</p>
             </td>
             <td class="tableitem fontroboto">
               <p class="itemtext">350.00</p>
@@ -205,24 +218,8 @@
     <div class="border-bottom"></div>
 
     <div class="paddingX">
-      <div id="mid2">
-        <div class="textRight pr">
-          <p class="infoh2mid">
-            <strong><span id="i51"></span></strong> : المتبقي
-          </p>
-        </div>
-        <div class="textRight">
-          <p class="infoh2mid">
-            <strong><span id="i49"></span></strong> : المدفوع
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="border-bottom"></div>
-
-    <div class="paddingX">
       <div id="mid3">
-        <div class="textRight pr">
+        <div class="textRight pr15">
           <p class="infoh2mid">
             <strong> <span id="i53"> محمد خالد </span></strong>
           </p>
@@ -235,15 +232,13 @@
 
     <div class="paddingX">
       <div id="mid3">
-        <div class="textRight pr">
+        <div class="textRight pr15">
           <p class="infoh2mid">
             <span class="infoh2midbtn border-1" id="i55">1</span>
           </p>
         </div>
         <div class="textRight">
-          <p class="infoh2mid">
-             <strong> رقم الكاشير</strong>
-          </p>
+          <p class="infoh2mid"><strong> رقم الكاشير</strong></p>
         </div>
       </div>
     </div>
@@ -255,15 +250,10 @@
   </div>
 </template>
 
-<script>
 
-export default {
-  name: 'Home',
-  components: {
-  }
-}
-</script>
- <style scoped>
+
+
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,500;1,700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
