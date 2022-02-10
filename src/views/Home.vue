@@ -11,7 +11,7 @@
       </div>
       <div class="info textRight">
         <h2 class="infoh2 pl14"># رقم الفاتورة</h2>
-        <p class="infoPara pl14" id="i5"></p>
+        <p class="infoPara pl14" id="i5">{{ inv.number }}</p>
       </div>
       <!--End Info-->
     </center>
@@ -23,35 +23,49 @@
           <p class="infoh2mid mb5">
             <span id="i10">001324956223333</span> : الرقم الضريبي
           </p>
-          <p class="infoh2mid mb5">الفرع :<span id="i14"></span></p>
-          <p class="infoh2mid mb5">المدينة :<span id="i18"></span></p>
-          <p class="infoh2mid mb5">الحي: <span id="i22"></span></p>
           <p class="infoh2mid mb5">
-            23236<span id="i24"></span> : الرمز البريدي
+            الفرع :<span id="i14">{{ inv.branch.name }}</span>
           </p>
           <p class="infoh2mid mb5">
-            6X XXX XX <span id="i28"></span> : رقم التليفون
+            المدينة :<span id="i18">{{ inv.branch.city.name }}</span>
           </p>
           <p class="infoh2mid mb5">
-            05XXXXXXXX <span id="i31"></span> : رقم الجوال
+            الحي: <span id="i22">{{ inv.branch.address }}</span>
+          </p>
+          <p class="infoh2mid mb5">
+            23236<span id="i24">{{ inv.branch.zipCode }}</span> : الرمز البريدي
+          </p>
+          <p class="infoh2mid mb5">
+            6X XXX XX <span id="i28">{{ inv.branch.telephone }}</span> : رقم
+            التليفون
+          </p>
+          <p class="infoh2mid mb5">
+            05XXXXXXXX <span id="i31">{{ inv.branch.phone }}</span> : رقم الجوال
           </p>
         </div>
         <div class="textRight wid50">
-          <p class="infoh2mid mb5"><span id="i8"></span> : تاريخ الإصدار</p>
-          <p class="infoh2mid mb10"><span id="i12"></span> : وقت الإصدار</p>
+          <p class="infoh2mid mb5">
+            <span id="i8">{{ date }}</span> : تاريخ الإصدار
+          </p>
+          <p class="infoh2mid mb10"><span id="i12">{{time}}</span> : وقت الإصدار</p>
           <p class="infoh2mid mb10">
-            اسم العميل : <span id="i16"></span>محمد عبدالله
+            اسم العميل : <span id="i16">{{ inv.clientName }}</span
+            >محمد عبدالله
           </p>
           <p class="infoh2mid mb10">
             : الرقم الضريبي للعميل
 
-            <span>001324956223333</span> <span id="i20"></span>
+            <span>001324956223333</span>
+            <span id="i20">{{ inv.clientVatNumber }}</span>
           </p>
           <p class="infoh2mid mb10">
-            عنوان العميل : <span id="i26"></span> محمد عبدالله
+            عنوان العميل : <span id="i26">{{ inv.clientAddress }}</span> محمد
+            عبدالله
           </p>
 
-          <p class="infoh2mid mb10 notes"><span id="i29"> </span></p>
+          <p class="infoh2mid mb10 notes">
+            <span id="i29">{{ inv.notes }} </span>
+          </p>
         </div>
       </div>
     </div>
@@ -82,19 +96,34 @@
 
           <tr class="service textcenter">
             <td class="tableitem">
-              <p class="itemtext fontroboto"><span id="i39"></span></p>
+              <p class="itemtext fontroboto">
+                <span id="i39">{{
+                  inv.listOfInvoiceDetails[4].qty *
+                  inv.listOfInvoiceDetails[5].taxedUnitPrice
+                }}</span>
+              </p>
             </td>
             <td class="tableitem">
-              <p class="itemtext fontroboto"><span id="i38"></span></p>
+              <p class="itemtext fontroboto">
+                <span id="i38">{{
+                  inv.listOfInvoiceDetails[6].unTaxedUnitPrice
+                }}</span>
+              </p>
             </td>
             <td class="tableitem">
-              <p class="itemtext fontroboto"><span id="i37"></span></p>
+              <p class="itemtext fontroboto">
+                <span id="i37">{{ inv.listOfInvoiceDetails[4].qty }}</span>
+              </p>
             </td>
             <td class="tableitem">
               <p class="itemtext">
-                <span id="i36a"></span>
+                <span id="i36a">{{
+                  inv.listOfInvoiceDetails[2].product.name
+                }}</span>
                 <br />
-                <span id="i36b"></span>
+                <span id="i36b">{{
+                  inv.listOfInvoiceDetails[2].product.number
+                }}</span>
               </p>
             </td>
           </tr>
@@ -185,10 +214,16 @@
             <span class="infoh2midbtn mb5 border-1">1</span>
           </p>
 
-          <p class="infoh2mid mb5"><span id="i43"></span></p>
-          <p class="infoh2mid mb5"><span id="i45"></span></p>
           <p class="infoh2mid mb5">
-            <strong><span id="i47"></span> </strong>
+            <span id="i43">{{ inv.totalAmount }}</span>
+          </p>
+          <p class="infoh2mid mb5">
+            <span id="i45">{{ inv.totalTax }}</span>
+          </p>
+          <p class="infoh2mid mb5">
+            <strong
+              ><span id="i47">{{ inv.totalTaxInc }}</span>
+            </strong>
           </p>
         </div>
         <div class="textRight">
@@ -208,12 +243,18 @@
       <div id="mid2">
         <div class="textRight pr">
           <p class="infoh2mid">
-            <strong><span id="i51"></span></strong> : المتبقي
+            <strong
+              ><span id="i51">{{ inv.remainingAmount }}</span></strong
+            >
+            : المتبقي
           </p>
         </div>
         <div class="textRight">
           <p class="infoh2mid">
-            <strong><span id="i49"></span></strong> : المدفوع
+            <strong
+              ><span id="i49">{{ inv.paidAmount }}</span></strong
+            >
+            : المدفوع
           </p>
         </div>
       </div>
@@ -224,7 +265,10 @@
       <div id="mid3">
         <div class="textRight pr">
           <p class="infoh2mid">
-            <strong> <span id="i53"> محمد خالد </span></strong>
+            <strong
+              >{{ inv.createdBy.name }}
+              <span id="i53"> محمد خالد </span></strong
+            >
           </p>
         </div>
         <div class="textRight">
@@ -237,12 +281,14 @@
       <div id="mid3">
         <div class="textRight pr">
           <p class="infoh2mid">
-            <span class="infoh2midbtn border-1" id="i55">1</span>
+            <span class="infoh2midbtn border-1" id="i55">
+              {{ inv.posSessionId }}</span
+            >
           </p>
         </div>
         <div class="textRight">
           <p class="infoh2mid">
-             <strong> رقم الكاشير</strong>
+            <strong> رقم الكاشير</strong>
           </p>
         </div>
       </div>
@@ -256,14 +302,43 @@
 </template>
 
 <script>
+// import vue from 'vue'
+// import axios from 'axios'
+// import VueAxios from 'vue-axios'
 
 export default {
-  name: 'Home',
-  components: {
-  }
-}
+  name: "Home",
+  data() {
+    return {
+      inv: null,
+      date: null,
+      time: null,
+    };
+  },
+  created() {
+    // Simple GET request using fetch
+    fetch("http://inv.taswog.com/json/Long_Invoice.json")
+      .then((response) => response.json())
+      .then((data) => {
+        this.inv = data;
+
+        var dt = data.createdAt;
+        // console.log(dt);
+
+        var now = new Date(dt);
+        // console.log(now);
+
+        var date__ = now.toLocaleDateString();
+        var time__ = now.toLocaleTimeString();
+        // console.log(date__);
+        this.date = date__;
+        this.time = time__;
+     
+      });
+  },
+};
 </script>
- <style scoped>
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,500;1,700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
