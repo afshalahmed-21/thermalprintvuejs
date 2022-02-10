@@ -17,5 +17,11 @@
 body{
   background: black;
 }
+@media print
+{
+  #nav{
+    display: none;
+  }
+}
 
 </style>

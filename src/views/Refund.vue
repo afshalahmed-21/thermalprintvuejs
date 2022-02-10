@@ -1,5 +1,5 @@
 <template>
-  <div id="invoice-POS">
+   <div id="invoice-POS">
     <p class="textcenter maintilte">إشعار دائن للفاتورة الضريبية المبسطة</p>
     <center id="top" class="paddingX">
       <div class="info">
@@ -11,7 +11,7 @@
       </div>
       <div class="info textRight">
         <h2 class="infoh2 pl14"># رقم المرتجع</h2>
-        <p class="infoPara pl14" id="i5">{{ result }}</p>
+        <p class="infoPara pl14" id="i5">37</p>
       </div>
       <!--End Info-->
     </center>
@@ -23,64 +23,47 @@
           <p class="infoh2mid mb5">
             <span id="i10">001324956223333</span> : الرقم الضريبي
           </p>
+          <p class="infoh2mid mb5">الفرع :<span id="i144">{{inv.branch.name}}</span></p>
+          <p class="infoh2mid mb5">المدينة :<span id="i18">{{inv.branch.city.name}}</span></p>
+          <p class="infoh2mid mb5">الحي: <span id="i22">{{inv.branch.address}}</span></p>
           <p class="infoh2mid mb5">
-            الفرع :<span id="i144">{{ inv.branch.name }}</span>
+            23236<span id="i24">{{inv.branch.zipCode}}</span> : الرمز البريدي
           </p>
           <p class="infoh2mid mb5">
-            المدينة :<span id="i18">{{ inv.branch.city.name }}</span>
+            6X XXX XX <span id="i28">{{inv.branch.telephone}}</span> : رقم التليفون
           </p>
           <p class="infoh2mid mb5">
-            الحي: <span id="i22">{{ inv.branch.address }}</span>
-          </p>
-          <p class="infoh2mid mb5">
-            23236<span id="i24">{{ inv.branch.zipCode }}</span> : الرمز البريدي
-          </p>
-          <p class="infoh2mid mb5">
-            6X XXX XX <span id="i28">{{ inv.branch.telephone }}</span> : رقم
-            التليفون
-          </p>
-          <p class="infoh2mid mb5">
-            05XXXXXXXX <span id="i31">{{ inv.branch.phoneNumber }}</span> : رقم
-            الجوال
+            05XXXXXXXX <span id="i31">{{inv.branch.phoneNumber}}</span> : رقم الجوال
           </p>
         </div>
         <div class="textRight wid50">
-          <p class="infoh2mid mb5">
-            #<span id="i60">{{ inv.number }}</span> : رقم الفاتورة
-          </p>
-          <p class="infoh2mid mb5">
-            <span id="i8">{{ date }}</span> : تاريخ الإصدار
-          </p>
+          <p class="infoh2mid mb5">#<span id="i60">{{inv.number}}</span> : رقم الفاتورة</p>
+          <p class="infoh2mid mb5"><span id="i8">{{ date }}</span> : تاريخ الإصدار</p>
+          <p class="infoh2mid mb10"><span id="i12">{{time}}</span> : وقت الإصدار</p>
           <p class="infoh2mid mb10">
-            <span id="i12">{{ time }}</span> : وقت الإصدار
-          </p>
-          <p class="infoh2mid mb10">
-            اسم العميل : <span id="i16">{{ inv.clientName }}</span
-            >محمد عبدالله
+            اسم العميل : <span id="i16">{{ inv.clientName}}</span>محمد عبدالله
           </p>
           <p class="infoh2mid mb10">
             : الرقم الضريبي للعميل
 
             <br />
-            <span>001324956223333</span>
-            <span id="i20"> {{ inv.clientVatNumber }}</span>
+            <span>001324956223333</span> <span id="i20"> {{ inv.clientVatNumber}}</span>
           </p>
           <p class="infoh2mid mb10">
-            عنوان العميل : <span id="i26">{{ inv.clientAddress }}</span> محمد
-            عبدالله
+            عنوان العميل : <span id="i26">{{ inv.clientAddress}}</span> محمد عبدالله
           </p>
 
           <p class="infoh2mid mb10 notes">
-            <span id="i29">{{ inv.notes }} </span> هو ببساطة نص شكلي يستخدم في
-            صناعة الطباعة والتنضيد. كان Lorem Ipsum هو النص الوهمي القياسي في
-            الصناعة منذ القرن الخامس عشر الميلادي ، عندما أخذت طابعة غير معروفة
-            لوحًا من النوع وتدافعت عليه لعمل كتاب عينة. لقد صمد ليس فقط لخمسة
-            قرون ، ولكن أيضًا القفزة في التنضيد الإلكتروني ، وظل دو في التنضيد
-            الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دو في التنضيد
-            الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دو في التنضيد
-            الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دو في التنضيد
-            الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دو في التنضيد
-            الإلكتروني ، وظل دون تغيير جوهري. كان
+            <span id="i29">{{inv.notes}} </span> هو ببساطة نص شكلي يستخدم في صناعة الطباعة
+            والتنضيد. كان Lorem Ipsum هو النص الوهمي القياسي في الصناعة منذ
+            القرن الخامس عشر الميلادي ، عندما أخذت طابعة غير معروفة لوحًا من
+            النوع وتدافعت عليه لعمل كتاب عينة. لقد صمد ليس فقط لخمسة قرون ، ولكن
+            أيضًا القفزة في التنضيد الإلكتروني ، وظل دو في التنضيد الإلكتروني ،
+            وظل دو في التنضيد الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دو
+            في التنضيد الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دو في
+            التنضيد الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دو في
+            التنضيد الإلكتروني ، وظل دو في التنضيد الإلكتروني ، وظل دون تغيير
+            جوهري. كان
           </p>
         </div>
       </div>
@@ -112,39 +95,1806 @@
 
           <tr class="service textcenter">
             <td class="tableitem">
-              <p class="itemtext fontroboto">
-                <span id="i39">{{
-                  inv.listOfInvoiceDetails[4].qty *
-                  inv.listOfInvoiceDetails[5].taxedUnitPrice
-                }}</span>
-              </p>
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
             </td>
             <td class="tableitem">
-              <p class="itemtext fontroboto">
-                <span id="i38">{{
-                  inv.listOfInvoiceDetails[6].unTaxedUnitPrice
-                }}</span>
-              </p>
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
             </td>
             <td class="tableitem">
-              <p class="itemtext fontroboto">
-                <span id="i37" v-for="inv in item" :key="inv.id">{{
-                  inv.id
-                }}</span>
-              </p>
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
             </td>
             <td class="tableitem">
               <p class="itemtext">
-                <span id="i36a">{{
-                  inv.listOfInvoiceDetails[2].product.name
-                }}</span>
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
                 <br />
-                <span id="i36b">{{
-                  inv.listOfInvoiceDetails[2].product.number
-                }}</span>
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
               </p>
             </td>
           </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+           <tr class="service textcenter">
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i39">{{ inv.listOfInvoiceDetails[4].qty * inv.listOfInvoiceDetails[5].taxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i38">{{inv.listOfInvoiceDetails[6].unTaxedUnitPrice}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext fontroboto"><span id="i37">{{inv.listOfInvoiceDetails[4].qty}}</span></p>
+            </td>
+            <td class="tableitem">
+              <p class="itemtext">
+                <span id="i36a" >{{inv.listOfInvoiceDetails[2].product.name}}</span>
+                <br />
+                <span id="i36b">{{inv.listOfInvoiceDetails[2].product.number}}</span>
+              </p>
+            </td>
+          </tr>
+
+         
         </table>
       </div>
       <!--End Table-->
@@ -159,16 +1909,10 @@
             <span class="infoh2midbtn mb5 border-1">1</span>
           </p>
 
+          <p class="infoh2mid mb5"><span id="i43">{{inv.totalAmount}}</span></p>
+          <p class="infoh2mid mb5"><span id="i45">{{inv.totalTax}}</span></p>
           <p class="infoh2mid mb5">
-            <span id="i43">{{ inv.totalAmount }}</span>
-          </p>
-          <p class="infoh2mid mb5">
-            <span id="i45">{{ inv.totalTax }}</span>
-          </p>
-          <p class="infoh2mid mb5">
-            <strong
-              ><span id="i47">{{ inv.totalTaxInc }}</span>
-            </strong>
+            <strong><span id="i47">{{inv.totalTaxInc}}</span> </strong>
           </p>
         </div>
         <div class="textRight">
@@ -188,9 +1932,7 @@
       <div id="mid3">
         <div class="textRight pr15">
           <p class="infoh2mid">
-            <strong>
-              <span id="i53">{{ inv.createdBy.name }} محمد خالد </span></strong
-            >
+            <strong> <span id="i53">{{inv.createdBy.name}} محمد خالد </span></strong>
           </p>
         </div>
         <div class="textRight">
@@ -203,9 +1945,7 @@
       <div id="mid3">
         <div class="textRight pr15">
           <p class="infoh2mid">
-            <span class="infoh2midbtn border-1" id="i55">{{
-              inv.posSessionId
-            }}</span>
+            <span class="infoh2midbtn border-1" id="i55">{{ inv.posSessionId}}</span>
           </p>
         </div>
         <div class="textRight">
@@ -222,7 +1962,7 @@
 </template>
 
 <script>
-import { ref } from "@vue/reactivity";
+import { ref } from '@vue/reactivity';
 // import vue from 'vue'
 // import axios from 'axios'
 // import VueAxios from 'vue-axios'
@@ -234,9 +1974,18 @@ export default {
       inv: null,
       date: null,
       time: null,
+   
     };
   },
-
+    data2() {
+    return {
+      inv1: null,
+      
+   
+    };
+  },
+   
+  
   created() {
     // Simple GET request using fetch
     fetch("http://inv.taswog.com/json/Long_Invoice.json")
@@ -255,10 +2004,29 @@ export default {
         // console.log(date__);
         this.date = date__;
         this.time = time__;
+     
       });
   },
+    setup() {
+      const result = ref(null)
+     
+    // Simple GET request using fetch
+    fetch("http://inv.taswog.com/json/short_refund.json")
+      .then((response) => response.json())
+      .then((data2) => {
+        result = data2
+          console.log(`hello world ${data2}`);
+     
+      });
+      return{
+        result
+        
+        }
+  },
 };
+
 </script>
+
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,500;1,700&display=swap");
